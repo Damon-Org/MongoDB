@@ -11,8 +11,7 @@ export default class MongoDB extends EventModule {
         super(main);
 
         this.register(MongoDB, {
-            name: 'mongodb',
-            scope: 'global'
+            name: 'mongodb'
         });
     }
 
@@ -27,7 +26,7 @@ export default class MongoDB extends EventModule {
         return this._ready;
     }
 
-    setup() {
+    init() {
         const config = this.config.development ? this.auth.credentials.mongodb.dev : this.auth.credentials.mongodb.prod;
 
         try {
